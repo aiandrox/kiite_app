@@ -1,0 +1,2 @@
+class Kiite < ApplicationRecord
+end
