@@ -14,11 +14,18 @@ class KiitesController < ApplicationController
   end
 
   def edit
+    @kiite = Kiite.find(params[:id])
+  end
+
+  def update
+    kiite = Kiite.find(params[:id])
+    kiite.update(kiite_params)
+    redirect_to root_path, notice: "投稿を編集しました"
   end
 
   private
   def kiite_params
-    params.require(:kiite).permit(:text, :sokka)
+    params.require(:kiite).permit(:text)
   end
   
 end
