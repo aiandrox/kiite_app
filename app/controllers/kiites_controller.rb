@@ -1,5 +1,6 @@
 class KiitesController < ApplicationController
   def index
+    @kiites = Kiite.all
   end
 
   def new
