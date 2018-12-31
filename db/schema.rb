@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_31_081840) do
+ActiveRecord::Schema.define(version: 2018_12_31_125838) do
 
   create_table "kiites", force: :cascade do |t|
     t.text "text"
     t.integer "sokka"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "emoticon"
   end
 
 end
