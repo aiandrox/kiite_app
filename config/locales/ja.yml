@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+  models:
+  attributes:
+  user:
+  name: 名前
+  email: メールアドレス
+  emoticon: 顔文字
+  text: 本文
