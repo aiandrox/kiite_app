@@ -8,9 +8,12 @@ class KiitesController < ApplicationController
   end
 
   def create
-    kiite = Kiite.new(kiite_params)
-    kiite.save
-    redirect_to root_path, notice: "投稿しました"
+    @kiite = Kiite.new(kiite_params)
+    if @kiite.save
+      redirect_to root_path, notice: "投稿しました"
+    else
+      render :new
+    end
   end
 
   def edit
@@ -18,8 +21,8 @@ class KiitesController < ApplicationController
   end
 
   def update
-    kiite = Kiite.find(params[:id])
-    kiite.update!(kiite_params)
+    @kiite = Kiite.find(params[:id])
+    @kiite.update!(kiite_params)
     redirect_to root_path, notice: "投稿を編集しました"
   end
   

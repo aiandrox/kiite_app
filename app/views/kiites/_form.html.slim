@@ -1,3 +1,8 @@
+- if kiite.errors.present?
+  ul#error_explanation
+    - @kiite.errors.full_messages.each do |message|
+      li= message
+
 = form_with model: @kiite, local: true do |f|
   .form-froup
     = f.label :text
