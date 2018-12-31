@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_30_161047) do
+ActiveRecord::Schema.define(version: 2018_12_31_081840) do
 
   create_table "kiites", force: :cascade do |t|
     t.text "text"
