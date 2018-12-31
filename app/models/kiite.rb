@@ -12,5 +12,5 @@
 
 class Kiite < ApplicationRecord
   validates :text, presence: true
-  # validates :emoticon, presence: true
+  validates :emoticon, presence: true
 end

@@ -1,6 +1,6 @@
 class KiitesController < ApplicationController
   def index
-    @kiites = Kiite.all
+    @kiites = Kiite.all.order(id: "DESC")
   end
 
   def new
@@ -33,7 +33,7 @@ class KiitesController < ApplicationController
   end
 
   def sokka
-    kiite = Kiite.find(params[:id])
+    kiite = Kiite.find(id: @kiite.id)
     if kiite.sokka == nil
       kiite.sokka = 0
     end
@@ -44,7 +44,7 @@ class KiitesController < ApplicationController
 
   private
   def kiite_params
-    params.require(:kiite).permit(:text)
+    params.require(:kiite).permit(:text, :emoticon)
   end
   
 end

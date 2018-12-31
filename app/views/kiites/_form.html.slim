@@ -1,10 +1,13 @@
 - if kiite.errors.present?
-  ul#error_explanation
-    - @kiite.errors.full_messages.each do |message|
-      li= message
+  .alert.alert-danger
+    ul#error_explanation
+      - @kiite.errors.full_messages.each do |message|
+        li= message
 
 = form_with model: @kiite, local: true do |f|
-  .form-froup
-    = f.label :text
+  .form-group
+    = f.select :emoticon, [["( ・∇・)", "( ・∇・)"], ["m(_ _)m", "m(_ _)m"], ["(´・ω・｀)", "(´・ω・｀)"], ["( *｀ω´)", "( *｀ω´)"], ["(/ _ ; )", "(/ _ ; )"], ["(//∇//)", "(//∇//)"]] , class:"form-control"
+
+  .form-group
     = f.text_area :text, rows: 5, class: 'form-control', id: 'kiite_text'
   = f.submit nil, class: 'btn btn-primary'
