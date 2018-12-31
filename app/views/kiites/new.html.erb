@@ -1,2 +1,9 @@
-<h1>Kiites#new</h1>
-<p>Find me in app/views/kiites/new.html.erb</p>
+<h1>Kiite#new</h1>
+<%= form_with model: @kiite, local: true do |f| %>
+  <%= f.hidden_field :sokka, { value: 0 } %>
+  <div class="form-froup">
+    <%= f.label :text %>
+    <%= f.text_area :text, rows: 5, class: 'form-control'%>
+  </div>
+  <%= f.submit nil, class: 'btn btn-primary' %>
+<% end %>
