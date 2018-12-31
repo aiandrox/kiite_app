@@ -1,0 +1,5 @@
+= link_to '新規作成', new_kiite_path, class: 'btn btn-primary'
+= @kiites.each do |kiite|
+  = kiite.text
+  = kiite.created_at
+  = kiite.sokka
