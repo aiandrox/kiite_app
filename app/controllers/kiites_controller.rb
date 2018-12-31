@@ -19,8 +19,24 @@ class KiitesController < ApplicationController
 
   def update
     kiite = Kiite.find(params[:id])
-    kiite.update(kiite_params)
+    kiite.update!(kiite_params)
     redirect_to root_path, notice: "投稿を編集しました"
+  end
+  
+  def destroy
+    kiite = Kiite.find(params[:id])
+    kiite.destroy
+    redirect_to root_path, notice: "投稿を削除しました"
+  end
+
+  def sokka
+    kiite = Kiite.find(params[:id])
+    if kiite.sokka == nil
+      kiite.sokka = 0
+    end
+    kiite.sokka += 1
+    kiite.update
+    redirect_to root_path
   end
 
   private
