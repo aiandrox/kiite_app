@@ -1,5 +1,15 @@
-= link_to '新規作成', new_kiite_path, class: 'btn btn-primary'
-= @kiites.each do |kiite|
-  = kiite.text
-  = kiite.created_at
-  = kiite.sokka
+/ = link_to new_kiite_path, '新規作成', class: 'btn btn-default'
+
+content
+
+  .row
+    = @kiites.each do |kiite|
+      .col-sm-4
+        .card
+          .card-body
+            p class="card-text"
+              = kiite.text
+            .text-muted
+              = kiite.created_at
+            = link_to "編集", edit_kiite_path(kiite), class: 'btn btn-default'
+            = link_to kiite.sokka, {action: :sokka}
