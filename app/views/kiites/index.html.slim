@@ -1,15 +1,15 @@
-/ = link_to new_kiite_path, '新規作成', class: 'btn btn-default'
+= link_to '新規作成', new_kiite_path, class: 'btn btn-primary'
 
-content
-
-  .row
-    = @kiites.each do |kiite|
-      .col-sm-4
-        .card
-          .card-body
-            p class="card-text"
-              = kiite.text
-            .text-muted
-              = kiite.created_at
-            = link_to "編集", edit_kiite_path(kiite), class: 'btn btn-default'
-            = link_to kiite.sokka, {action: :sokka}
+.row
+  = @kiites.each do |kiite|
+    .col-sm-4
+      .card
+        .card-body
+          p class="card-text"
+            = simple_format(h(kiite.text), {}, sanitize: false, wrapper_tag: "div")
+          .text-muted
+            = kiite.created_at
+          = link_to "編集", edit_kiite_path(kiite), class: 'btn btn-default'
+          = link_to "削除", kiite, method: :delete, date: { confirm: "投稿を削除します。よろしいですか？" }, class: 'btn btn-danger'
+          / = link_to "そっか", kiites, method: :sokka, class: 'btn btn-default'
+          = kiite.sokka
