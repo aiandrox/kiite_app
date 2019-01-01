@@ -15,3 +15,4 @@
           = link_to "削除", kiite, method: :delete, date: { confirm: "投稿を削除します。よろしいですか？" }, class: 'btn btn-danger'
           = link_to "そっか", kiites_sokka_path(@kiite), method: :get, class: 'btn btn-default'
           = kiite.sokka
+          = link_to "詳細", kiite, class: 'btn btn-default'

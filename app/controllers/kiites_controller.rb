@@ -32,6 +32,10 @@ class KiitesController < ApplicationController
     redirect_to root_path, notice: "投稿を削除しました"
   end
 
+  def show
+    @kiite = Kiite.find(params[:id])
+  end
+
   def sokka
     kiite = Kiite.find(id: @kiite.id)
     if kiite.sokka == nil
