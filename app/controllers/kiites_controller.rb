@@ -37,6 +37,7 @@ class KiitesController < ApplicationController
   end
 
   def sokka
+    render :noting
     kiite = Kiite.find(id: @kiite.id)
     if kiite.sokka == nil
       kiite.sokka = 0
