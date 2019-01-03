@@ -15,4 +15,5 @@
 
 class Comment < ApplicationRecord
   belongs_to :kiite
+  validates :text, presence: true
 end
