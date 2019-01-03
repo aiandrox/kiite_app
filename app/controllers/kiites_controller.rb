@@ -37,13 +37,13 @@ class KiitesController < ApplicationController
   end
 
   def sokka
-    render :noting
-    kiite = Kiite.find(id: @kiite.id)
-    if kiite.sokka == nil
-      kiite.sokka = 0
+    kiite = Kiite.find(params[:id])
+    sokka = kiite.sokka
+    if sokka== nil
+      sokka = 0
     end
-    kiite.sokka += 1
-    kiite.update
+    sokka += 1
+    kiite.update(sokka: sokka)
     redirect_to root_path
   end
 

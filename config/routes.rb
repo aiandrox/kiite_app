@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   get 'comments/update'
   get 'comments/destroy'
   root to: 'kiites#index'
+  get 'kiites/sokka'
   resources :kiites
-  get 'kiites/sokka', to: 'kiites#sokka'
 end
