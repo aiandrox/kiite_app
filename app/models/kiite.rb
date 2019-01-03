@@ -11,6 +11,7 @@
 #
 
 class Kiite < ApplicationRecord
+  has_many :comments, foreign_key: kiite_id, dependent: :destroy
   validates :text, presence: true
   validates :emoticon, presence: true
 end

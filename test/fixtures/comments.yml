@@ -1,0 +1,24 @@
+# == Schema Information
+#
+# Table name: comments
+#
+#  id         :integer          not null, primary key
+#  text       :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  kiite_id   :integer
+#
+# Indexes
+#
+#  index_comments_on_kiite_id  (kiite_id)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kiite: one
+  text: MyText
+
+two:
+  kiite: two
+  text: MyText
