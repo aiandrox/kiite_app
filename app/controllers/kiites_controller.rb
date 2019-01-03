@@ -34,6 +34,7 @@ class KiitesController < ApplicationController
 
   def show
     @kiite = Kiite.find(params[:id])
+    @comment = Comment.new
   end
 
   def sokka

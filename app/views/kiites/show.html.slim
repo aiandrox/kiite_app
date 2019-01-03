@@ -11,3 +11,8 @@
       = link_to "そっか", kiites_sokka_path(@kiite), method: :get, class: 'btn btn-default'
       = @kiite.sokka
 
+= @comment.each do |comment|
+  = comment.text
+  = comment.created_at
+
+= render partial: "comments/form", locals: { kiite: @kiite, comment: @comment }

@@ -1,0 +1,11 @@
+/ - if kiite.errors.present?
+/   .alert.alert-danger
+/     ul#error_explanation
+/       - @kiite.errors.full_messages.each do |message|
+/         li= message
+
+= form_with model: [kiite, comment], local: true do |f|
+  = f.hidden_field :kiite_id, { value: kiite.id } 
+  .form-group
+    = f.text_area :text, rows: 5, class: 'form-control', id: 'comment_text'
+  = f.submit nil, class: 'btn btn-primary'
