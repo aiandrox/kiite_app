@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
   def create
     @kiite = Kiite.find(params[:kiite_id])
-    @comment = Comment.new
-    if @comment.save(comment_params)
+    @comment = Comment.new(comment_params)
+    if @comment.save
       redirect_to kiite_path(@kiite), notice: "コメントしました"
     else
       redirect_to kiite_path(@kiite)
@@ -21,6 +21,6 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:text)
+    params.require(:comment).permit(:text, :kiite_id)
   end
 end
