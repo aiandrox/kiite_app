@@ -14,12 +14,14 @@
 h2
 | Comment
 - if @kiite.comments.any?
-  .row
-    - @kiite.comments.each do |comment|
-      .col-8
-        = "( ・・) #{comment.text}"
-      .col-4
-        = comment.created_at.to_s(:datetime_jp)
+  table class="table"
+    tbody
+      - @kiite.comments.each do |comment|
+        tr
+          th class="col-xs-8"
+            = simple_format(h(comment.text), {}, sanitize: false, wrapper_tag: "div")
+          th class="col-xs-4"
+            = comment.created_at.to_s(:datetime_jp)
 - else
   p
   | 最初のコメントをしよう！
