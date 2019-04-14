@@ -10,6 +10,6 @@
           p.card-text
             = simple_format(h(kiite.text), {}, sanitize: false, wrapper_tag: "div")
           p.text-muted
-            = kiite.created_at.to_s(:datetime_jp)
+            = created_at_display(kiite)
           = link_to "そっか #{kiite.sokka}", { controller: 'kiites', action: 'sokka', id: kiite.id }, class: 'btn btn-default'
           = link_to "詳細", kiite, class: 'btn btn-default'

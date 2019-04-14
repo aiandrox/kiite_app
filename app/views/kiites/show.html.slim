@@ -5,7 +5,7 @@
   .col-9.balloon
     p
       = simple_format(h(@kiite.text), {}, sanitize: false, wrapper_tag: "div")
-      = @kiite.created_at.to_s(:datetime_jp)
+      = created_at_display(@kiite)
       = link_to "編集", edit_kiite_path(@kiite), class: 'btn btn-default'
       = link_to "削除", @kiite, method: :delete, date: { confirm: "投稿を削除します。よろしいですか？" }, class: 'btn btn-danger'
       = link_to "そっか", kiites_sokka_path(@kiite), method: :get, class: 'btn btn-default'
@@ -21,7 +21,7 @@ h2
           th class="col-xs-8"
             = simple_format(h(comment.text), {}, sanitize: false, wrapper_tag: "div")
           th class="col-xs-4"
-            = comment.created_at.to_s(:datetime_jp)
+            = created_at_display(comment)
 - else
   p
   | 最初のコメントをしよう！
