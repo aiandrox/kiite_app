@@ -12,7 +12,7 @@
       = @kiite.sokka
 
 h2
-| Comment
+  | メッセージ
 - if @kiite.comments.any?
   table class="table"
     tbody
@@ -24,6 +24,6 @@ h2
             = created_at_display(comment)
 - else
   p
-  | 最初のコメントをしよう！
+    | 最初のメッセージを送ろう！
 
 = render partial: "comments/form", locals: { kiite: @kiite, comment: @comment }

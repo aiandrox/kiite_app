@@ -52,5 +52,4 @@ class KiitesController < ApplicationController
   def kiite_params
     params.require(:kiite).permit(:text, :emoticon)
   end
-  
 end

@@ -98,7 +98,7 @@ th {
 hr {
   display: block;
   height: 1px;
-  border: 0;   
+  border: 0;
   border-top: 1px solid #cccccc;
   margin: 1em 0;
   padding: 0;
@@ -107,7 +107,11 @@ input, select {
   vertical-align: middle;
 }
 
-/* indexのところ */
+h2 {
+  font-size: 25px;
+}
+
+/* kiiteのcard */
 .card {
   margin-bottom: 10px;
   .card-text {
