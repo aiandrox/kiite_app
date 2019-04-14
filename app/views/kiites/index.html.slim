@@ -5,13 +5,11 @@
     .col-sm-4
       .card
         .card-body
-          h5 class="card-title"
+          h5.card-title
             = kiite.emoticon
-          p class="card-text"
+          p.card-text
             = simple_format(h(kiite.text), {}, sanitize: false, wrapper_tag: "div")
-          .text-muted
+          p.text-muted
             = kiite.created_at.to_s(:datetime_jp)
-          = link_to "編集", edit_kiite_path(kiite), class: 'btn btn-default'
-          = link_to "削除", kiite, method: :delete, date: { confirm: "投稿を削除します。よろしいですか？" }, class: 'btn btn-danger'
           = link_to "そっか #{kiite.sokka}", { controller: 'kiites', action: 'sokka', id: kiite.id }, class: 'btn btn-default'
           = link_to "詳細", kiite, class: 'btn btn-default'
